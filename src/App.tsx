@@ -1,11 +1,32 @@
 import React from "react";
-import { Button } from "antd";
+import { Layout, Menu, Breadcrumb } from "antd";
+
+import "./App.css";
+
+const { Header, Content, Footer } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <Button type="primary">Button</Button>
-    </div>
+    <Layout className="layout">
+      <Header>
+        <div className="logo" />
+        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
+          <Menu.Item key="1">검색</Menu.Item>
+          <Menu.Item key="2">수동 등록</Menu.Item>
+        </Menu>
+      </Header>
+      <Content style={{ padding: "0 50px" }}>
+        <Breadcrumb style={{ margin: "16px 0" }}>
+          <Breadcrumb.Item>Home</Breadcrumb.Item>
+          <Breadcrumb.Item>List</Breadcrumb.Item>
+          <Breadcrumb.Item>App</Breadcrumb.Item>
+        </Breadcrumb>
+        <div className="site-layout-content">Content</div>
+      </Content>
+      <Footer style={{ textAlign: "center" }}>
+        Ant Design ©2018 Created by Ant UED
+      </Footer>
+    </Layout>
   );
 }
 
